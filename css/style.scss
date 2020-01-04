@@ -1,0 +1,475 @@
+$widthPC: 1024px; //PC
+$widthTab: 768px; //タブレット
+$widthSp: 568px; //スマートフォン
+
+@mixin pc {
+  @media (min-width: ($widthTab)) {
+    @content;
+  }
+}
+@mixin sp {
+  @media (max-width: ($widthTab)) {
+    @content;
+  }
+}
+
+html{
+  overflow:auto;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+body{
+  font-family: "Noto Sans JP", sans-serif;
+  box-sizing: border-box;
+  line-height: 1.5;
+  word-wrap: break-word;
+  overflow: hidden;
+  font-size: 62.5%;
+  letter-spacing: .2em;
+  min-width: 100%;
+  width: 100%;
+  @include pc {
+    // min-width: 1200px;
+  }
+}
+img{
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  border: 0;
+  vertical-align: bottom;
+}
+a{
+  color: #333;
+  text-decoration: none;
+  transition:all 0.5s;
+  -webkit-transition:all 0.5s;
+  -moz-transition:all 0.5s;
+  -ms-transition:all 0.5s;
+  -o-transition:all 0.5s;
+}
+a:hover{
+  opacity: .5;
+}
+ul{
+  list-style: none;
+}
+
+.sp_visible{
+  display: block;
+  @include pc {
+    display: none;
+  }
+}
+
+.pc_visible{
+  display: none;
+  @include pc {
+    display: block;
+  }
+}
+
+.jpn{
+  display: block;
+}
+
+.product__inner{
+  width: 90%;
+  margin: 0 auto;
+}
+
+// HEADER
+.header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  height: 60px;
+  background-color: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.16);
+  display: flex;
+  justify-content: start;
+  @include pc {
+    justify-content: center;
+  }
+  &__logo--img{
+    height: 60px;
+    padding: 0 0 0 10px;
+    @include pc {
+      padding: 0;
+    }
+  }
+  &__nav {
+    position: fixed;
+    right: -320px;
+    top: 0;
+    width: 300px;
+    height: 100vh;
+    padding-top: 60px;
+    background-color: #fff;
+    transition: all .6s;
+    z-index: 200;
+    overflow-y: auto;
+  }
+  &__nav--list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  &__nav--item {
+    text-align: center;
+    padding: 0 14px;
+    a {
+      display: block;
+      padding: 8px 0;
+      border-bottom: 1px solid #eee;
+      text-decoration: none;
+      color: #111;
+      @include pc {
+        font-size: 12px;
+      }
+      &:hover {
+        background-color: #eee;
+      }
+    }
+  }
+}
+
+.hamburger {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 40px;
+  height: 60px;
+  cursor: pointer;
+  z-index: 300;
+  &__line {
+    position: absolute;
+    left: 11px;
+    width: 18px;
+    height: 1px;
+    background-color: #111;
+    transition: all .6s;
+    &--1{
+      top: 24px;
+    }
+    &--2{
+      top: 30px;
+    }
+    &--3{
+      top: 36px;
+    }
+  }
+}
+
+.black-bg {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 100;
+  background-color: #000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all .6s;
+  cursor: pointer;
+}
+
+.nav-open {
+  .header__nav {
+    right: 0;
+  }
+  .black-bg {
+    opacity: .8;
+    visibility: visible;
+  }
+  .hamburger__line--1 {
+    transform: rotate(45deg);
+    top: 30px;
+  }
+  .hamburger__line--2 {
+    width: 0;
+    left: 50%;
+  }
+  .hamburger__line--3 {
+    transform: rotate(-45deg);
+    top: 30px;
+  }
+}
+// HEADER
+
+
+.main{
+  margin: 60px 0 40px;
+}
+
+.content{
+  margin: 0 auto 70px;
+  @include pc {
+    margin: 0 auto 70px;
+  }
+  &__ttl{
+    margin: 20px 0;
+    color: #83705e;
+    font-family: mr-eaves-modern, sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    text-align: center;
+    letter-spacing: .3em;
+    @include pc {
+      margin: 40px 0;
+      font-size: 1.4rem;
+    }
+  }
+}
+
+.slick-dots {
+  bottom: 5%;
+}
+
+
+.slide--ranking .slick-dots {
+  bottom: -12%;
+}
+
+// PRODUCT
+.product{
+  &__area{
+
+  }
+  &__ttl{
+
+  }
+  &__inner{
+
+  }
+  &__category{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    &--item{
+      width: calc(100% / 2 - 4%);
+      margin: 0 auto 3%;
+      @include pc {
+        width: calc(100% / 3 - 6%);
+      }
+    }
+    &--img{
+      margin-bottom: 20px;
+    }
+    &--name{
+      margin: 0 0 20px;
+      color: #83705e;
+      font-family: mr-eaves-modern, sans-serif;
+      font-weight: 400;
+      font-size: 1.1rem;
+      font-weight: normal;
+      letter-spacing: .2em;
+      text-align: center;
+    }
+    &--txt{
+      font-size: 12px;
+      @include pc {
+        font-size: 14px;
+      }
+    }
+  }
+}
+// PRODUCT
+
+
+// RANKING
+.ranking{
+  font-family:"Noto Sans JP", sans-serif;
+  width: 100%;
+  @include pc {
+    width: 90%;
+    margin: 0 auto;
+  }
+  &__item{
+    padding: 0 15%;
+    &--num{
+      text-align: center;
+      padding: 0 0 10px;
+      font-size: 14px;
+    }
+    &--img{
+      display: block;
+      object-fit: cover;
+      border-radius: 50%;
+      padding: 0 0 10px;
+      margin: 0 auto;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      -ms-border-radius: 50%;
+      -o-border-radius: 50%;
+}
+    &--name{
+      text-align: center;
+      padding: 0 0 10px;
+      font-size: 15px;
+    }
+    &--txt{
+      padding: 0 0 10px;
+      font-size: 12px;
+    }
+    &--price{
+      font-family:"Noto Sans JP", sans-serif;
+      text-align: center;
+      font-size: 12px;
+    }
+  }
+}
+// RANKING
+
+
+
+// NEWS
+.news{
+  font-family:"Noto Sans JP", sans-serif;
+  width: 100%;
+  @include pc {
+    width: 90%;
+    margin: 0 auto;
+  }
+  &__list{
+    padding: 0 10%;
+    @include pc {
+      padding: 0 15%;
+    }
+    &--item{
+      margin-bottom: 20px;
+      @include pc {
+        margin-bottom: 30px;
+      }
+      &--link{
+
+      }
+      &--date{
+
+      }
+      &--ttl{
+        @include pc {
+          margin-top: 12px;
+          font-size: 14px;
+          line-height: 1.714285714;
+        }
+      }
+    }
+  }
+}
+// NEWS
+
+
+// FOOTER
+.footer{
+  color: #fff;
+  margin: 40px 0 0;
+  background: #333;
+  &__container{
+    width: 90%;
+    margin: 0 auto;
+    padding: 40px 0 10px;
+    @include pc {
+      padding: 60px 0 10px;
+    }
+  }
+  &__link{
+    margin: 0 0 40px;
+    &--list{
+      display: flex;
+      flex-wrap: wrap;
+      a{
+        color: #fff;
+        font-size: 12px;
+        @include pc {
+          font-size: 16px;
+        }
+      }
+    }
+    &--item{
+      width: 50%;
+      text-align: center;
+      padding: 5px 0;
+      @include pc {
+        width: 25%;
+      }
+    }
+  }
+  &__sns{
+    &--list{
+      display: flex;
+      flex-wrap: wrap;
+      text-align: center;
+      margin: 0 0 20px;
+    }
+    &--item{
+      width: calc(100% / 3);
+      a{
+        color: #fff;
+        font-size: 12px;
+        @include pc {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+  &__opening{
+    border-top: 1px solid; 
+    font-size: 14px;
+    &--info{
+      border: 1px solid #fff;
+      padding: 20px;
+      margin: 30px 0 10px;
+      @include pc {
+        margin: 60px 30% 10px;
+      }
+    }
+  }
+  &__logo{
+
+  }
+  &__copy{
+    text-align: center;
+  }
+}
+// FOOTER
+
+
+// パンくず
+// .breadcrumbs {
+// width: 90%;
+// margin: 150px auto -80px;
+// }
+// .breadcrumbs ul {
+// display: table;
+// font-size: 13px;
+// }
+// .breadcrumbs ul li {
+// margin: 0 10px 0 0;
+// font-size: 13px;
+// float: left;
+// }
+// .breadcrumbs ul li:first-child::before {
+// padding: 0 3px 0 0;
+// content: "\f015";
+// font-family: FontAwesome;
+// font-size: 14px;
+// }
+// .breadcrumbs ul li::before {
+// padding: 0 10px 0 0;
+// content: "\f105";
+// font-family: FontAwesome;
+// font-size: 14px;
+// }
+// パンくず

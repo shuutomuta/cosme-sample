@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>カードレイアウト</title>
+  <link rel="stylesheet" href="css/ress.css">
+  <link rel="stylesheet" href="css/slick/slick-theme.css">
+  <link rel="stylesheet" href="css/slick/slick.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/itemlist/item-list.css">
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP|Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!------------- HEADER ------------>
+<header class="header">
+  <h1 class="header__logo"><a href="index.html"><img class="header__logo--img" src="img/logo.png" alt=""></a></h1>
+  <nav class="header__nav">
+    <ul class="header__nav--list">
+      <li class="header__nav--item"><a href="index.html">ホーム</a></li>
+      <li class="header__nav--item"><a href="item-list.html">商品一覧</a></li>
+      <li class="header__nav--item"><a href="">お問い合わせ</a></li>
+    </ul>
+  </nav>
+  <div class="hamburger" id="js-hamburger">
+    <span class="hamburger__line hamburger__line--1"></span>
+    <span class="hamburger__line hamburger__line--2"></span>
+    <span class="hamburger__line hamburger__line--3"></span>
+  </div>
+  <div class="black-bg" id="js-black-bg"></div>
+</header>
+<!------------- HEADER ------------>
+
+<!-- <div class="breadcrumbs">
+  <ul>
+    <li><a href="/">HOME ></li>
+    <li><a href="/seo/">商品一覧</li>
+  </ul>
+</div> -->
+
+<div class="item__list">
+  <div class="item__list__area">
+    <div class="item__list__box">
+      <img class="item__list__img" src="img/shop-item1.jpg" alt="">
+      <h3 class="item__list__name--en">COSME ITEM</h3>
+      <p class="item__list__name--ja">コスメアイテム</p>
+      <p class="item__list__txt">あなたの肌に潤いを与えます</p>
+      <a class="item__list__detail" href="item.html">詳細を見る</a>
+      <a class="item__list__cart" href="">カートに入れる</a>
+    </div>
+    <div class="item__list__box">
+      <img class="item__list__img" src="img/shop-item1.jpg" alt="">
+      <h3 class="item__list__name--en">COSME ITEM</h3>
+      <p class="item__list__name--ja">コスメアイテム</p>
+      <p class="item__list__txt">あなたの肌に潤いを与えます</p>
+      <a class="item__list__detail" href="item.html">詳細を見る</a>
+      <a class="item__list__cart" href="">カートに入れる</a>
+    </div>
+    <div class="item__list__box">
+      <img class="item__list__img" src="img/shop-item1.jpg" alt="">
+      <h3 class="item__list__name--en">COSME ITEM</h3>
+      <p class="item__list__name--ja">コスメアイテム</p>
+      <p class="item__list__txt">あなたの肌に潤いを与えます</p>
+      <a class="item__list__detail" href="item.html">詳細を見る</a>
+      <a class="item__list__cart" href="">カートに入れる</a>
+    </div>
+    <div class="item__list__box">
+      <img class="item__list__img" src="img/shop-item1.jpg" alt="">
+      <h3 class="item__list__name--en">COSME ITEM</h3>
+      <p class="item__list__name--ja">コスメアイテム</p>
+      <p class="item__list__txt">あなたの肌に潤いを与えます</p>
+      <a class="item__list__detail" href="item.html">詳細を見る</a>
+      <a class="item__list__cart" href="">カートに入れる</a>
+    </div>
+    <div class="item__list__box">
+      <img class="item__list__img" src="img/shop-item1.jpg" alt="">
+      <h3 class="item__list__name--en">COSME ITEM</h3>
+      <p class="item__list__name--ja">コスメアイテム</p>
+      <p class="item__list__txt">あなたの肌に潤いを与えます</p>
+      <a class="item__list__detail" href="item.html">詳細を見る</a>
+      <a class="item__list__cart" href="">カートに入れる</a>
+    </div>
+  </div>
+</div>
+
+  <!------------- FOOTER ------------>
+  <footer class="footer">
+    <div class="footer__container">
+      <section class="footer__link">
+        <ul class="footer__link--list">
+          <li class="footer__link--item"><a href="">会社概要<span class="footer__nav--item--icon"></span></a></li>
+          <li class="footer__link--item"><a href="item-list.html">商品一覧<span class="footer__nav--item--icon"></span></a></li>
+          <li class="footer__link--item"><a href="">プライバシーポリシー<span class="footer__nav--item--icon"></span></a></li>
+          <li class="footer__link--item"><a href="">利用規約<span class="footer__nav--item--icon"></span></a></li>
+        </ul>
+      </section>
+      <section class="footer__sns">
+        <ul class="footer__sns--list">
+          <li class="footer__sns--item"><a href="" target="_blank"><i class="fa fa-facebook-official" aria-hidden="true"></i>Facebook</a></li>
+          <li class="footer__sns--item"><a href="" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i>Instagram</a></li>
+          <li class="footer__sns--item"><a href="" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i>Twitter</a></li>
+        </ul>
+        <div class="footer__opening">
+          <div class="footer__opening--info">
+            <p>営業時間<br>
+              <span class="tel"><i class="fa fa-phone-square" aria-hidden="true"></i> 000-000-0000</span>受付時間／9:00〜18:00<br>
+              E-mail: test-site@test.jp
+            </p>
+          </div> 
+          <p class="footer__logo"><img src="" alt=""></p>
+          <p class="footer__copy">©test footer Co.,Ltd.</p>
+        </div>
+      </section>
+    </div>
+  </footer>
+  <!------------- FOOTER ------------>
+
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script src="js/slick.js"></script>
+<script src="js/index.js"></script> 
+</body> 
+</html>

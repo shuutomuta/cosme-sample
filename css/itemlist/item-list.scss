@@ -1,0 +1,80 @@
+$widthPC: 1024px; //PC
+$widthTab: 768px; //タブレット
+$widthSp: 568px; //スマートフォン
+
+@mixin pc {
+  @media (min-width: ($widthTab)) {
+    @content;
+  }
+}
+@mixin sp {
+  @media (max-width: ($widthTab)) {
+    @content;
+  }
+}
+
+.item__list{
+  width: 90%;
+  margin: 80px auto 0;
+  @include pc {
+    margin: 120px auto 0;
+  }
+  &__area{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  &__box{
+    width: 47%;
+    margin: 20px 6% 0 0;
+    &:nth-of-type(2n){
+      margin: 20px 0 0 0;
+    }
+    @include pc {
+      width: 22.5%;
+      margin-right: calc(10% / 3);
+      &:nth-of-type(2n){
+        margin-right: calc(10% / 3);
+      }
+      &:nth-of-type(4n){
+        margin: 20px 0 0 0;
+      }
+    }
+  }
+  &__img{
+
+  }
+  &__name--en{
+    font-size: .9rem;
+    margin: 10px 0 0;
+  }
+  &__name--ja{
+    margin: 5px 0 0;
+  }
+  &__txt{
+    margin: 10px 0 0;
+  }
+  &__detail{
+    width: 100%;
+    display: block;
+    text-align: center;
+    margin: 10px auto 0;
+    padding: 10px 0;
+    background: #333;
+    color: #fff;
+    @include pc {
+      width: 90%;
+    }
+  }
+  &__cart{
+    width: 100%;
+    display: block;
+    text-align: center;
+    margin: 10px auto 0;
+    padding: 10px 0;
+    background: #333;
+    color: #fff;
+    @include pc {
+      width: 90%;
+    }
+  }
+}

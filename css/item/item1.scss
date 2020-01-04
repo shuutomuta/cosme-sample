@@ -1,0 +1,117 @@
+$widthPC: 1024px; //PC
+$widthTab: 768px; //タブレット
+$widthSp: 568px; //スマートフォン
+
+@mixin pc {
+  @media (min-width: ($widthTab)) {
+    @content;
+  }
+}
+@mixin sp {
+  @media (max-width: ($widthTab)) {
+    @content;
+  }
+}
+
+body{
+  margin: 0 0 60px;
+  @include pc {
+    margin: 0;
+  }
+}
+
+.item{
+  width: 90%;
+  margin: 80px auto 0;
+  @include pc {
+    margin: 120px auto 0;
+  }
+  &__info{
+    display: flex;
+    flex-wrap: wrap;
+    @include pc {
+      flex-direction: row-reverse;
+    }
+  }
+  &__name__area{
+    @include pc {
+      width: 50%;
+      padding: 0 0 0 10%;
+    }
+  }
+  &__name{
+    &--en{
+      font-size: 1.1rem;
+    }
+    &--ja{
+      font-size: 0.9rem;
+    }
+  }
+  &__price__area{
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    &--fix{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 10px 0;
+      position: fixed;
+      bottom: 0;
+      background: burlywood;
+      z-index: 1;
+      margin: 0 -5%;
+      height: 60px;
+      width: 100%;
+      padding: 0 5%;
+    }
+  }
+  &__price{
+    padding: 10px 20px;
+    background: #333;
+    color: #fff;
+    &__txt{
+      // font-size: 1rem;
+      font-size: calc(1.1rem + ((1vw - 16px) * 1.1));
+    }
+  }
+  &__img__area{
+    margin: 20px 0 0;
+    @include pc {
+      width: 50%;
+      margin: 0;
+    }
+  }
+  &__detail{
+    margin: 20px 0;
+    &__tab__item{
+      font-size: 1rem;
+      padding:3px 10px;
+      list-style:none;
+      text-align:center;
+      cursor:pointer;
+    }
+    &__tab__list{
+      display: flex;
+    }
+    &__tab__content{
+      font-size: .8rem;
+      border-top:none;
+      margin: 15px 0 0;
+    }
+    &__tab__txt{
+      display:none;
+    }
+    &__tab__item.is-active{
+      border-bottom: 1px solid;
+}
+    &__tab__txt.is-show{
+      display:block;
+      transition: all 0.5s ease-out;
+      -webkit-transition: all 0.5s ease-out;
+      -moz-transition: all 0.5s ease-out;
+      -ms-transition: all 0.5s ease-out;
+      -o-transition: all 0.5s ease-out;      
+    }
+  }
+}
