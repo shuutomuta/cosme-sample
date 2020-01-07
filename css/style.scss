@@ -128,15 +128,13 @@ ul{
   &__nav--item {
     text-align: center;
     padding: 0 14px;
+    font-size: 12px;
     a {
       display: block;
       padding: 8px 0;
       border-bottom: 1px solid #eee;
       text-decoration: none;
       color: #111;
-      @include pc {
-        font-size: 12px;
-      }
       &:hover {
         background-color: #eee;
       }
