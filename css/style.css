@@ -261,12 +261,13 @@ ul {
 
 .product__category--item {
   width: calc(100% / 2 - 4%);
-  margin: 0 auto 3%;
+  margin: 0 auto 5%;
 }
 
 @media (min-width: 768px) {
   .product__category--item {
     width: calc(100% / 3 - 6%);
+    margin: 0 auto 3%;
   }
 }
 
@@ -275,7 +276,7 @@ ul {
 }
 
 .product__category--name {
-  margin: 0 0 20px;
+  margin: 0 0 10px;
   color: #83705e;
   font-family: mr-eaves-modern, sans-serif;
   font-weight: 400;
