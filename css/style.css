@@ -130,7 +130,7 @@ ul {
 .header__nav--item {
   text-align: center;
   padding: 0 14px;
-  font-size: 12px;
+  font-size: 0.85rem;
 }
 
 .header__nav--item a {
@@ -377,6 +377,10 @@ ul {
   .news__list--item {
     margin-bottom: 30px;
   }
+}
+
+.news__list--item--ttl {
+  font-size: .9rem;
 }
 
 @media (min-width: 768px) {
